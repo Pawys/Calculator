@@ -60,9 +60,7 @@ main {
   border-radius: 9999px;
   aspect-ratio: auto;
 }
-.toggled{
-  background-color: white;
-}
+
 .clear{
   flex-grow: 2;
   border-radius: 9999px;
