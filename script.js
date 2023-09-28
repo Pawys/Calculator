@@ -131,6 +131,7 @@ function setColor(button, num){
 }
 function equal(){
   let anwser = operate(a,b,operator)
+  if (typeof(anwser) === 'string'){error = 1; return anwser;};
   if (!Number.isInteger(anwser)){
    if (anwser.toString().split('.')[1].length > 3){
      anwser = (Math.round((anwser + Number.EPSILON) * 1000) / 1000);
@@ -148,6 +149,7 @@ function equal(){
 }
 
 function clear(){
+  display.style.fontSize = null;
   a = '';
   b = '';
   operator = '';
@@ -174,7 +176,7 @@ function operate(a, b, operator){
   }else if (operator === 'x'){
     return a * b;
   }else {
-    if (b == 0){
+    if (b === 0){
       return ":P"
     }
     return a / b;
